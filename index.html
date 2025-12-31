@@ -215,6 +215,30 @@
             display: block;
             animation: fadeIn 0.2s ease-out forwards;
         }
+        
+        /* Navbar Active State */
+        .nav-item.active {
+            color: #60a5fa !important;
+            position: relative;
+        }
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #60a5fa;
+            border-radius: 50%;
+        }
+        .nav-dropdown-item.active {
+            background: #eff6ff !important;
+            color: #2563eb !important;
+        }
+        .nav-dropdown-item.active .iconify {
+            color: #2563eb !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased font-sans selection:bg-blue-100 selection:text-blue-900">
@@ -229,38 +253,38 @@
 
             <!-- Desktop Links -->
             <div class="hidden lg:flex items-center gap-6">
-                <button onclick="router('home')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Home</button>
+                <button onclick="router('home')" id="nav-home" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Home</button>
                 
                 <!-- Loans Dropdown -->
                 <div class="relative nav-dropdown-group h-20 flex items-center">
-                    <button class="text-sm font-medium text-white hover:text-blue-400 transition-colors flex items-center gap-1">
+                    <button id="nav-loans" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors flex items-center gap-1">
                         Loans <span class="iconify" data-icon="lucide:chevron-down" data-width="14"></span>
                     </button>
                     <!-- Dropdown Menu -->
                     <div class="nav-dropdown-menu hidden absolute top-16 left-0 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-2 z-50">
-                        <button onclick="router('loan-personal')" class="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
+                        <button onclick="router('loan-personal')" id="nav-loan-personal" class="nav-dropdown-item w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
                             <span class="iconify text-blue-500" data-icon="lucide:user" data-width="18"></span> Personal Loan
                         </button>
-                        <button onclick="router('loan-home')" class="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
+                        <button onclick="router('loan-home')" id="nav-loan-home" class="nav-dropdown-item w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
                             <span class="iconify text-blue-500" data-icon="lucide:home" data-width="18"></span> Home Loan
                         </button>
-                        <button onclick="router('loan-business')" class="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
+                        <button onclick="router('loan-business')" id="nav-loan-business" class="nav-dropdown-item w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
                             <span class="iconify text-blue-500" data-icon="lucide:briefcase" data-width="18"></span> Business Loan
                         </button>
-                        <button onclick="router('loan-education')" class="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
+                        <button onclick="router('loan-education')" id="nav-loan-education" class="nav-dropdown-item w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
                             <span class="iconify text-blue-500" data-icon="lucide:graduation-cap" data-width="18"></span> Education Loan
                         </button>
-                        <button onclick="router('loan-lap')" class="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
+                        <button onclick="router('loan-lap')" id="nav-loan-lap" class="nav-dropdown-item w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-lg flex items-center gap-3 transition-colors">
                             <span class="iconify text-blue-500" data-icon="lucide:building-2" data-width="18"></span> Loan Against Property
                         </button>
                     </div>
                 </div>
 
-                <button onclick="router('invest')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Investments</button>
-                <button onclick="router('services')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Services</button>
-                <button onclick="router('blogs')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Blogs</button>
-                <button onclick="router('partner')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Partners</button>
-                <button onclick="router('contact')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Contact</button>
+                <button onclick="router('invest')" id="nav-invest" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Investments</button>
+                <button onclick="router('services')" id="nav-services" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Services</button>
+                <button onclick="router('blogs')" id="nav-blogs" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Blogs</button>
+                <button onclick="router('partner')" id="nav-partner" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Partners</button>
+                <button onclick="router('contact')" id="nav-contact" class="nav-item text-sm font-medium text-white hover:text-blue-400 transition-colors">Contact</button>
             </div>
 
             <!-- Actions -->
@@ -388,6 +412,201 @@
                         </div>
                         <h3 class="text-lg font-semibold text-slate-900 mb-2">Investments</h3>
                         <p class="text-slate-500 text-sm">Mutual Funds, FDs & more.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us Section -->
+            <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-24">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-semibold tracking-tight text-slate-900 mb-4">Why Choose Infinite Capital Management?</h2>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto">We're not just another financial service provider. We're your trusted partner in achieving your financial goals.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300">
+                            <div class="h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                                <span class="iconify text-blue-600" data-icon="lucide:shield-check" data-width="32"></span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-3">Trusted & Authorized</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Authorized partner of leading banks and NBFCs. Your data and transactions are completely secure.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300">
+                            <div class="h-16 w-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                                <span class="iconify text-emerald-600" data-icon="lucide:zap" data-width="32"></span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-3">Fast Processing</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Quick approvals and same-day disbursal for eligible customers. Get funds when you need them most.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300">
+                            <div class="h-16 w-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                                <span class="iconify text-purple-600" data-icon="lucide:users" data-width="32"></span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-3">Expert Guidance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Experienced financial consultants to guide you through every step of your financial journey.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300">
+                            <div class="h-16 w-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
+                                <span class="iconify text-amber-600" data-icon="lucide:percent" data-width="32"></span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-3">Best Rates</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Competitive interest rates and flexible repayment options tailored to your financial capacity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="bg-slate-900 text-white py-24">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-semibold tracking-tight mb-4">Our Impact in Numbers</h2>
+                        <p class="text-slate-300 text-lg">Trusted by thousands of customers across India</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-blue-400 mb-3">10,000+</div>
+                            <div class="text-slate-300 text-sm uppercase tracking-wider">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-blue-400 mb-3">₹500Cr+</div>
+                            <div class="text-slate-300 text-sm uppercase tracking-wider">Loans Disbursed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-blue-400 mb-3">50+</div>
+                            <div class="text-slate-300 text-sm uppercase tracking-wider">Bank Partners</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-blue-400 mb-3">98%</div>
+                            <div class="text-slate-300 text-sm uppercase tracking-wider">Approval Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="max-w-7xl mx-auto px-6 py-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-semibold tracking-tight text-slate-900 mb-4">How It Works</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Getting your loan approved is simple and hassle-free. Follow these easy steps.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="relative mb-8">
+                            <div class="h-20 w-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1</div>
+                            <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-600 to-blue-200 transform translate-x-4"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Apply Online</h3>
+                        <p class="text-slate-600 text-sm">Fill out a simple online form with your basic details. It takes less than 5 minutes.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative mb-8">
+                            <div class="h-20 w-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">2</div>
+                            <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-600 to-blue-200 transform translate-x-4"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Get Verified</h3>
+                        <p class="text-slate-600 text-sm">Our team verifies your documents and eligibility. We'll contact you if we need any additional information.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative mb-8">
+                            <div class="h-20 w-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">3</div>
+                            <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-600 to-blue-200 transform translate-x-4"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Get Approved</h3>
+                        <p class="text-slate-600 text-sm">Receive instant approval notification. Review your loan terms and interest rates.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative mb-8">
+                            <div class="h-20 w-20 bg-emerald-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">4</div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Receive Funds</h3>
+                        <p class="text-slate-600 text-sm">Money gets transferred directly to your bank account. Start using it for your needs immediately.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-24">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-semibold tracking-tight text-slate-900 mb-4">What Our Customers Say</h2>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="flex items-center gap-1 mb-4">
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                            </div>
+                            <p class="text-slate-700 mb-6 leading-relaxed">"Infinite Capital Management made my home loan process so smooth. Their team was professional, responsive, and helped me get the best interest rate. Highly recommended!"</p>
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 font-semibold">RK</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-900">Rajesh Kumar</div>
+                                    <div class="text-sm text-slate-500">Home Loan Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="flex items-center gap-1 mb-4">
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                            </div>
+                            <p class="text-slate-700 mb-6 leading-relaxed">"I needed urgent funds for my business expansion. The team at Infinite Capital understood my requirements and got me approved within 24 hours. Excellent service!"</p>
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <span class="text-purple-600 font-semibold">PS</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-900">Priya Sharma</div>
+                                    <div class="text-sm text-slate-500">Business Loan Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="flex items-center gap-1 mb-4">
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                                <span class="iconify text-amber-400" data-icon="lucide:star" data-width="20"></span>
+                            </div>
+                            <p class="text-slate-700 mb-6 leading-relaxed">"The investment advisory services helped me build a solid portfolio. Their expertise in mutual funds and financial planning is unmatched. Thank you!"</p>
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <span class="text-emerald-600 font-semibold">AM</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-900">Amit Mehta</div>
+                                    <div class="text-sm text-slate-500">Investment Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+                <div class="max-w-7xl mx-auto px-6 text-center">
+                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">Ready to Start Your Financial Journey?</h2>
+                    <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Join thousands of satisfied customers who have achieved their financial goals with us. Get started today!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="router('apply')" class="bg-white text-blue-600 hover:bg-blue-50 text-sm font-medium py-3 px-8 rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg">
+                            Apply Now
+                            <span class="iconify" data-icon="lucide:arrow-right" data-stroke-width="1.5"></span>
+                        </button>
+                        <button onclick="router('contact')" class="bg-blue-600/30 border border-white/30 hover:bg-white/10 text-white backdrop-blur-md text-sm font-medium py-3 px-8 rounded-full transition-colors">
+                            Contact Us
+                        </button>
                     </div>
                 </div>
             </section>
@@ -1653,12 +1872,20 @@
                 view.classList.remove('active');
             });
             
+            // Remove active state from all nav items
+            document.querySelectorAll('.nav-item, .nav-dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
             // Handle scrolling
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             const target = document.getElementById(viewName + '-view');
             if (target) {
                 target.classList.add('active');
+                
+                // Set active state on navbar
+                updateNavActiveState(viewName);
                 
                 // If opening apply view, reset form steps
                 if(viewName === 'apply') {
@@ -1667,6 +1894,42 @@
             } else {
                 // Fallback to home if route not found
                 document.getElementById('home-view').classList.add('active');
+                updateNavActiveState('home');
+            }
+        }
+        
+        // Update navbar active state
+        function updateNavActiveState(viewName) {
+            // Map view names to nav item IDs
+            const navMap = {
+                'home': 'nav-home',
+                'invest': 'nav-invest',
+                'services': 'nav-services',
+                'blogs': 'nav-blogs',
+                'partner': 'nav-partner',
+                'contact': 'nav-contact',
+                'loan-personal': 'nav-loan-personal',
+                'loan-home': 'nav-loan-home',
+                'loan-business': 'nav-loan-business',
+                'loan-education': 'nav-loan-education',
+                'loan-lap': 'nav-loan-lap'
+            };
+            
+            // Set active on specific nav item
+            const navId = navMap[viewName];
+            if (navId) {
+                const navItem = document.getElementById(navId);
+                if (navItem) {
+                    navItem.classList.add('active');
+                }
+                
+                // If it's a loan page, also highlight the Loans dropdown
+                if (viewName.startsWith('loan-')) {
+                    const loansBtn = document.getElementById('nav-loans');
+                    if (loansBtn) {
+                        loansBtn.classList.add('active');
+                    }
+                }
             }
         }
 
@@ -1776,6 +2039,9 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize navbar active state (home is default)
+            updateNavActiveState('home');
+            
             // Initialize EMI calculator
             calculateEMI();
             
