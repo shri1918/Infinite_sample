@@ -1,12 +1,12 @@
-<html lang="en" class="scroll-smooth"><head>
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Capital Management | Financial Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="js/iconify.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -98,28 +98,20 @@
 <body class="bg-slate-50 text-slate-900 antialiased font-sans selection:bg-blue-100 selection:text-blue-900">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200/60 transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-black border-b border-slate-700/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Logo -->
             <button onclick="router('home')" class="flex items-center gap-2 group">
-                <div class="flex items-center gap-2">
-                    <div class="text-blue-700">
-                        <span class="iconify" data-icon="lucide:infinity" data-width="32" data-stroke-width="2"></span>
-                    </div>
-                    <div class="flex flex-col items-start leading-none">
-                        <span class="text-xl font-semibold tracking-tight text-slate-900">Infinite</span>
-                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-medium">Capital Management</span>
-                    </div>
-                </div>
+                <img src="images/logo.png" alt="Infinite Capital Management" class="h-20 w-auto drop-shadow-lg filter brightness-110 contrast-110">
             </button>
 
             <!-- Desktop Links -->
             <div class="hidden lg:flex items-center gap-6">
-                <button onclick="router('home')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Home</button>
+                <button onclick="router('home')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Home</button>
                 
                 <!-- Loans Dropdown -->
                 <div class="relative nav-dropdown-group h-20 flex items-center">
-                    <button class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                    <button class="text-sm font-medium text-white hover:text-blue-400 transition-colors flex items-center gap-1">
                         Loans <span class="iconify" data-icon="lucide:chevron-down" data-width="14"></span>
                     </button>
                     <!-- Dropdown Menu -->
@@ -142,11 +134,11 @@
                     </div>
                 </div>
 
-                <button onclick="router('invest')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Investments</button>
-                <button onclick="router('services')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Services</button>
-                <button onclick="router('blogs')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Blogs</button>
-                <button onclick="router('partner')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Partners</button>
-                <button onclick="router('contact')" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors">Contact</button>
+                <button onclick="router('invest')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Investments</button>
+                <button onclick="router('services')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Services</button>
+                <button onclick="router('blogs')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Blogs</button>
+                <button onclick="router('partner')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Partners</button>
+                <button onclick="router('contact')" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">Contact</button>
             </div>
 
             <!-- Actions -->
@@ -158,30 +150,30 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-600">
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-white">
                 <span class="iconify" data-icon="lucide:menu" data-width="24" data-stroke-width="1.5"></span>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 p-6 flex-col gap-4 shadow-xl h-[calc(100vh-80px)] overflow-y-auto">
-            <button onclick="router('home'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Home</button>
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black border-b border-slate-700 p-6 flex-col gap-4 shadow-xl h-[calc(100vh-80px)] overflow-y-auto">
+            <button onclick="router('home'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Home</button>
             
-            <div class="flex flex-col gap-3 pl-4 border-l-2 border-blue-50">
-                <span class="text-xs font-semibold text-blue-600 uppercase tracking-widest">Loans</span>
-                <button onclick="router('loan-personal'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600">Personal Loan</button>
-                <button onclick="router('loan-home'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600">Home Loan</button>
-                <button onclick="router('loan-business'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600">Business Loan</button>
-                <button onclick="router('loan-education'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600">Education Loan</button>
-                <button onclick="router('loan-lap'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600">Loan Against Property</button>
+            <div class="flex flex-col gap-3 pl-4 border-l-2 border-blue-600">
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-widest">Loans</span>
+                <button onclick="router('loan-personal'); toggleMobileMenu()" class="text-left text-sm font-medium text-white">Personal Loan</button>
+                <button onclick="router('loan-home'); toggleMobileMenu()" class="text-left text-sm font-medium text-white">Home Loan</button>
+                <button onclick="router('loan-business'); toggleMobileMenu()" class="text-left text-sm font-medium text-white">Business Loan</button>
+                <button onclick="router('loan-education'); toggleMobileMenu()" class="text-left text-sm font-medium text-white">Education Loan</button>
+                <button onclick="router('loan-lap'); toggleMobileMenu()" class="text-left text-sm font-medium text-white">Loan Against Property</button>
             </div>
 
-            <button onclick="router('invest'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Investments</button>
-            <button onclick="router('services'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Services</button>
-            <button onclick="router('blogs'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Blogs</button>
-            <button onclick="router('partner'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Partner with Us</button>
-            <button onclick="router('contact'); toggleMobileMenu()" class="text-left text-sm font-medium text-slate-600 border-b border-slate-100 pb-2">Contact</button>
-            <button onclick="router('apply'); toggleMobileMenu()" class="text-left text-sm font-bold text-blue-700 mt-4">Apply Now</button>
+            <button onclick="router('invest'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Investments</button>
+            <button onclick="router('services'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Services</button>
+            <button onclick="router('blogs'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Blogs</button>
+            <button onclick="router('partner'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Partner with Us</button>
+            <button onclick="router('contact'); toggleMobileMenu()" class="text-left text-sm font-medium text-white border-b border-slate-700 pb-2">Contact</button>
+            <button onclick="router('apply'); toggleMobileMenu()" class="text-left text-sm font-bold text-blue-400 mt-4">Apply Now</button>
         </div>
     </nav>
 
@@ -194,13 +186,13 @@
             <section class="relative h-[650px] w-full flex items-center justify-center overflow-hidden bg-slate-900">
                 <div id="hero-carousel" class="absolute inset-0 w-full h-full">
                     <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Architecture" class="w-full h-full object-cover">
+                        <img src="images/architecture_building.jpg" alt="Architecture" class="w-full h-full object-cover">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&amp;w=1932&amp;auto=format&amp;fit=crop" alt="Meeting" class="w-full h-full object-cover">
+                        <img src="images/meeting_collaboration.jpg" alt="Meeting" class="w-full h-full object-cover">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Growth" class="w-full h-full object-cover">
+                        <img src="images/growth_data.jpg" alt="Growth" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -210,7 +202,7 @@
                 <div class="relative z-20 max-w-7xl mx-auto px-6 text-center md:text-left w-full mt-16">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-blue-100 mb-6 backdrop-blur-md">
                         <span class="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
-                        Authorized Partner of Leading Banks &amp; NBFCs
+                        Authorized Partner of Leading Banks & NBFCs
                     </div>
                     <h1 class="text-5xl md:text-7xl font-semibold tracking-tight text-white mb-6 leading-[1.1]">
                         Empowering Your <br>
@@ -257,7 +249,7 @@
                             <span class="iconify" data-icon="lucide:briefcase" data-width="24"></span>
                         </div>
                         <h3 class="text-lg font-semibold text-slate-900 mb-2">Business Loan</h3>
-                        <p class="text-slate-500 text-sm">Capital for expansion &amp; growth.</p>
+                        <p class="text-slate-500 text-sm">Capital for expansion & growth.</p>
                     </div>
                     <!-- Education -->
                     <div onclick="router('loan-education')" class="cursor-pointer group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
@@ -273,7 +265,7 @@
                             <span class="iconify" data-icon="lucide:trending-up" data-width="24"></span>
                         </div>
                         <h3 class="text-lg font-semibold text-slate-900 mb-2">Investments</h3>
-                        <p class="text-slate-500 text-sm">Mutual Funds, FDs &amp; more.</p>
+                        <p class="text-slate-500 text-sm">Mutual Funds, FDs & more.</p>
                     </div>
                 </div>
             </section>
@@ -283,7 +275,7 @@
         <div id="loan-personal-view" class="view-section">
             <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
                 <div class="absolute inset-0 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1533552657424-9467643527a2?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="Travel">
+                    <img src="images/travel_personal.jpg" class="w-full h-full object-cover" alt="Travel">
                 </div>
                 <div class="relative z-10 max-w-7xl mx-auto px-6">
                     <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Instant Approval</span>
@@ -401,7 +393,7 @@
                             <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Address Proof:</strong> Utility bills, Rent agreement, or Passport</li>
                         </ul>
 
-                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 p-6 rounded-xl">
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 p-6 rounded-xl mb-10">
                             <div class="flex items-start gap-4">
                                 <div class="p-2 bg-green-100 rounded-lg">
                                     <span class="iconify text-green-600" data-icon="lucide:info" data-width="24"></span>
@@ -411,6 +403,17 @@
                                     <p class="text-sm text-slate-600">Most lenders allow pre-payment after 6-12 months with minimal or zero charges. Check your loan agreement for specific terms.</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Start Your Financial Journey Section -->
+                        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-10 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-semibold mb-4">Start Your Financial Journey Today</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">I wanted to personally invite you to start your financial journey with me. Together, we can plan for your future, grow your wealth, and secure your family's needs.</p>
+                            <p class="text-blue-100 mb-8 text-sm">Let me know if you have any questions—I'm here to help!</p>
+                            <button onclick="window.open('https://www.wealthy.in/partners/siddh72418/', '_blank')" class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                                Connect With Me
+                                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
+                            </button>
                         </div>
                     </div>
 
@@ -430,745 +433,15 @@
             </section>
         </div>
 
-        <!-- ================= HOME LOAN VIEW ================= -->
-        <div id="loan-home-view" class="view-section">
-            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
-                <div class="absolute inset-0 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&amp;w=1973&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="House">
-                </div>
-                <div class="relative z-10 max-w-7xl mx-auto px-6">
-                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Housing Finance</span>
-                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Home Loans</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl">Step into your dream home with our affordable housing finance solutions. Purchase, Construction, Renovation, or Plot Purchase - We've got you covered.</p>
-                </div>
-            </section>
-
-            <section class="max-w-7xl mx-auto px-6 py-20">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2">
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Key Features</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:percent" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">Low Interest</h4><p class="text-xs text-slate-500">Starts @ 8.35% p.a.*</p></div>
-                            </div>
-                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:clock" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">Long Tenure</h4><p class="text-xs text-slate-500">Up to 30 Years</p></div>
-                            </div>
-                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:coins" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">High LTV</h4><p class="text-xs text-slate-500">Up to 90% of property value</p></div>
-                            </div>
-                             <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:refresh-cw" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">Balance Transfer</h4><p class="text-xs text-slate-500">Switch &amp; save on EMIs</p></div>
-                            </div>
-                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:wallet" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">High Amount</h4><p class="text-xs text-slate-500">Up to ₹10 Crores</p></div>
-                            </div>
-                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
-                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:shield-check" data-width="20"></span></div>
-                                <div><h4 class="font-semibold text-sm">Tax Benefits</h4><p class="text-xs text-slate-500">Under Sec 80C & 24(b)</p></div>
-                            </div>
-                        </div>
-                        
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Types of Home Loans</h2>
-                        <div class="space-y-4 mb-10">
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-2 bg-blue-50 rounded-lg">
-                                        <span class="iconify text-blue-600" data-icon="lucide:home" data-width="24"></span>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="font-semibold text-slate-900 mb-2">Home Purchase Loan</h4>
-                                        <p class="text-sm text-slate-600 mb-3">For buying new or resale residential properties. Covers apartments, villas, independent houses, and row houses. Up to 90% of property value financed.</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">LTV: 75-90%</span>
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Max: ₹10 Cr</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-2 bg-blue-50 rounded-lg">
-                                        <span class="iconify text-blue-600" data-icon="lucide:hammer" data-width="24"></span>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="font-semibold text-slate-900 mb-2">Construction Loan</h4>
-                                        <p class="text-sm text-slate-600 mb-3">For constructing a house on a plot you own. Disbursed in stages based on construction progress. Covers material, labor, and architect costs.</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Stage-wise disbursal</span>
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Max: ₹5 Cr</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-2 bg-blue-50 rounded-lg">
-                                        <span class="iconify text-blue-600" data-icon="lucide:paint-bucket" data-width="24"></span>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="font-semibold text-slate-900 mb-2">Home Improvement/Renovation Loan</h4>
-                                        <p class="text-sm text-slate-600 mb-3">For renovation, repairs, extension, or interior upgrades of existing property. Faster processing with minimal documentation.</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Quick approval</span>
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Max: ₹50 Lakhs</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-2 bg-blue-50 rounded-lg">
-                                        <span class="iconify text-blue-600" data-icon="lucide:square-dashed" data-width="24"></span>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="font-semibold text-slate-900 mb-2">Plot/Land Purchase Loan</h4>
-                                        <p class="text-sm text-slate-600 mb-3">For purchasing residential land/plot. Property must be RERA approved with clear title. Construction must start within 2-3 years.</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">LTV: 60-70%</span>
-                                            <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Max: ₹2 Cr</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Eligibility Criteria</h2>
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 mb-10">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3">Salaried Individuals</h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Age: 21-65 years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Min. Income: ₹30,000/month</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Work Experience: 2+ years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> CIBIL Score: 750+</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3">Self-Employed</h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Age: 21-70 years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Min. Income: ₹50,000/month</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Business vintage: 3+ years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> ITR for last 2 years</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Documentation Required</h2>
-                        <ul class="space-y-4 mb-10 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Identity Proof:</strong> PAN Card, Aadhar Card, Passport, Voter ID</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Address Proof:</strong> Utility bills, Rent agreement, Property tax receipts</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Income Proof:</strong> Salary slips (3 months), Form 16, ITR (2 years), Bank statements (6 months)</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Property Documents:</strong> Sale deed, Allotment letter, NOC, Property tax receipts, Approved building plan</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Additional:</strong> Processing fee cheque, Passport size photographs</li>
-                        </ul>
-
-                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-xl">
-                            <div class="flex items-start gap-4">
-                                <div class="p-2 bg-amber-100 rounded-lg">
-                                    <span class="iconify text-amber-600" data-icon="lucide:lightbulb" data-width="24"></span>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-2">Tax Benefits on Home Loans</h4>
-                                    <ul class="text-sm text-slate-600 space-y-1">
-                                        <li>• <strong>Section 80C:</strong> Deduction up to ₹1.5 Lakh on principal repayment</li>
-                                        <li>• <strong>Section 24(b):</strong> Deduction up to ₹2 Lakh on interest paid (self-occupied)</li>
-                                        <li>• <strong>Section 80EEA:</strong> Additional ₹1.5 Lakh deduction on interest for first-time buyers</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="lg:col-span-1">
-                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
-                            <h3 class="text-xl font-semibold text-slate-900 mb-4">Calculate EMI</h3>
-                            <div class="space-y-4 mb-6">
-                                <div>
-                                    <label class="text-xs font-medium text-slate-600">Loan Amount</label>
-                                    <input type="text" value="₹ 50,00,000" class="w-full mt-1 px-3 py-2 border rounded-md text-sm bg-slate-50" readonly="">
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-slate-600">Interest Rate</label>
-                                    <input type="text" value="8.50% p.a." class="w-full mt-1 px-3 py-2 border rounded-md text-sm bg-slate-50" readonly="">
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-slate-600">Tenure (Years)</label>
-                                    <input type="text" value="20 Years" class="w-full mt-1 px-3 py-2 border rounded-md text-sm bg-slate-50" readonly="">
-                                </div>
-                                <div class="pt-4 border-t border-slate-100">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-slate-500">Monthly EMI</span>
-                                        <span class="text-xl font-bold text-blue-600">₹43,391</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-xs text-slate-500">
-                                        <span>Total Interest</span>
-                                        <span>₹54,13,840</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button onclick="router('apply')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded-lg transition-colors">
-                                Apply for Home Loan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ================= BUSINESS LOAN VIEW ================= -->
-        <div id="loan-business-view" class="view-section">
-            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
-                <div class="absolute inset-0 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="Office Building">
-                </div>
-                <div class="relative z-10 max-w-7xl mx-auto px-6">
-                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">SME &amp; Corporate</span>
-                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Business Loans</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl">Fuel your business growth with unsecured and secured capital. Working capital, machinery purchase, business expansion, or operational needs - We support all.</p>
-                </div>
-            </section>
-
-             <section class="max-w-7xl mx-auto px-6 py-20">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2">
-                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                            Every business has unique financial needs. Infinite Capital Management offers customized collateral-free and secured loans tailored for MSMEs, traders, manufacturers, service providers, and growing enterprises.
-                        </p>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Types of Business Financing</h2>
-                        <div class="space-y-6 mb-10">
-                            <div class="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 shrink-0 font-bold">1</div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-slate-900 mb-2">Unsecured Business Loan</h3>
-                                    <p class="text-sm text-slate-600 mb-3">Avail up to ₹2 Crores without pledging any asset. Ideal for immediate cash flow needs, inventory purchase, marketing expenses, or operational costs. Quick approval with minimal documentation.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">No Collateral</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Fast Processing</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Up to ₹2 Cr</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 shrink-0 font-bold">2</div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-slate-900 mb-2">Machinery & Equipment Loan</h3>
-                                    <p class="text-sm text-slate-600 mb-3">Upgrade your technology, machinery, or plant capacity. Funding against the machinery value with competitive interest rates. Suitable for manufacturing, construction, and production units.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Asset-backed</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">80-90% LTV</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Up to 7 Years</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 shrink-0 font-bold">3</div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-slate-900 mb-2">Working Capital / Overdraft</h3>
-                                    <p class="text-sm text-slate-600 mb-3">Manage day-to-day operations, inventory, vendor payments, and payables smoothly with overdraft facilities. Pay interest only on utilized amount. Revolving credit facility for flexibility.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Revolving Credit</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Interest on Usage</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Up to ₹5 Cr</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 shrink-0 font-bold">4</div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-slate-900 mb-2">Commercial Vehicle Loan</h3>
-                                    <p class="text-sm text-slate-600 mb-3">Finance trucks, buses, taxis, construction vehicles, or any commercial transport. Up to 90% of vehicle on-road price. Fast approval with minimal documentation.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">90% Funding</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Low EMI</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Up to 5 Years</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 shrink-0 font-bold">5</div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-slate-900 mb-2">MSME/Mudra Loan</h3>
-                                    <p class="text-sm text-slate-600 mb-3">Government-backed loans for micro and small enterprises. Shishu (up to ₹50K), Kishor (₹50K-₹5L), Tarun (₹5L-₹10L) schemes available. Lower interest rates and easy eligibility.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Govt. Backed</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Low Interest</span>
-                                        <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Up to ₹10 L</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Key Benefits</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:trending-up" data-width="24"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm mb-1">Flexible Repayment</h4>
-                                    <p class="text-xs text-slate-600">Choose tenure from 1 to 7 years based on cash flow</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:zap" data-width="24"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm mb-1">Quick Disbursal</h4>
-                                    <p class="text-xs text-slate-600">Get funds within 3-7 working days</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:file-text" data-width="24"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm mb-1">Minimal Documentation</h4>
-                                    <p class="text-xs text-slate-600">Hassle-free paperwork with digital processing</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:shield" data-width="24"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm mb-1">Tax Benefits</h4>
-                                    <p class="text-xs text-slate-600">Interest paid is tax deductible under Income Tax Act</p>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 mb-10">
-                            <h4 class="font-semibold text-slate-900 mb-4">Basic Eligibility Criteria</h4>
-                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-600">
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Business vintage &gt; 3 years</li>
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Annual Turnover &gt; ₹40 Lakhs</li>
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Profit making for last 2 years</li>
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Good CIBIL Score (700+)</li>
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> No default history</li>
-                                <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Registered business entity</li>
-                            </ul>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Documentation Required</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Business Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> GST Returns (last 12 months)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> ITR for last 2 years</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Bank statements (12 months)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Business registration proof</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> MOA/AOA (for companies)</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Personal Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> PAN Card of directors/partners</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Aadhar Card</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Address proof</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Passport size photographs</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Property papers (if secured loan)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-1">
-                        <div class="bg-blue-600 text-white p-8 rounded-2xl shadow-xl sticky top-24 mb-6">
-                            <h3 class="text-xl font-semibold mb-2">Grow Your Business</h3>
-                            <p class="text-blue-100 text-sm mb-6">Apply today and get approval within 48 hours.</p>
-                            
-                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg mb-6">
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-blue-100">Interest Rate</span>
-                                    <span class="text-sm font-bold">10% - 18%*</span>
-                                </div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-blue-100">Loan Amount</span>
-                                    <span class="text-sm font-bold">Up to ₹5 Cr</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-xs text-blue-100">Tenure</span>
-                                    <span class="text-sm font-bold">1-7 Years</span>
-                                </div>
-                            </div>
-
-                            <button onclick="router('apply')" class="w-full bg-white text-blue-700 font-medium py-3 rounded-lg transition-colors hover:bg-blue-50">
-                                Check Eligibility
-                            </button>
-                        </div>
-                    </div>
-                </div>
-             </section>
-        </div>
-
-        <!-- ================= EDUCATION LOAN VIEW ================= -->
-        <div id="loan-education-view" class="view-section">
-            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
-                <div class="absolute inset-0 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Education">
-                </div>
-                <div class="relative z-10 max-w-7xl mx-auto px-6">
-                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Study in India & Abroad</span>
-                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Education Loans</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl">Invest in your child's future. Fund higher education at top universities in India and abroad with competitive interest rates.</p>
-                </div>
-            </section>
-
-            <section class="max-w-7xl mx-auto px-6 py-20">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2">
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why Choose Our Education Loan?</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                            <div class="p-6 bg-white border border-slate-200 rounded-xl">
-                                <span class="iconify text-blue-600 mb-3" data-icon="lucide:percent" data-width="24"></span>
-                                <h3 class="font-semibold text-slate-900">Low Interest Rates</h3>
-                                <p class="text-sm text-slate-500 mt-2">Starting from 8.50%* per annum with special rates for premier institutions.</p>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-xl">
-                                <span class="iconify text-blue-600 mb-3" data-icon="lucide:globe-2" data-width="24"></span>
-                                <h3 class="font-semibold text-slate-900">Study Anywhere</h3>
-                                <p class="text-sm text-slate-500 mt-2">Cover courses in India, USA, UK, Canada, Australia, and 100+ countries.</p>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-xl">
-                                <span class="iconify text-blue-600 mb-3" data-icon="lucide:wallet" data-width="24"></span>
-                                <h3 class="font-semibold text-slate-900">100% Finance</h3>
-                                <p class="text-sm text-slate-500 mt-2">Up to ₹1.5 Crore loan amount covering tuition, living, and travel expenses.</p>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-xl">
-                                <span class="iconify text-blue-600 mb-3" data-icon="lucide:calendar-clock" data-width="24"></span>
-                                <h3 class="font-semibold text-slate-900">Flexible Repayment</h3>
-                                <p class="text-sm text-slate-500 mt-2">Moratorium period during study + 1 year. Repay over 15 years after course completion.</p>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Loan Coverage</h2>
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 mb-10">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                        <span class="iconify text-blue-600" data-icon="lucide:check-circle" data-width="18"></span> Covered Expenses
-                                    </h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Full tuition & course fees</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Accommodation & living costs</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Books, equipment & laptops</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Travel & visa expenses</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Project work & thesis costs</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Insurance premiums</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                        <span class="iconify text-blue-600" data-icon="lucide:graduation-cap" data-width="18"></span> Eligible Courses
-                                    </h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Undergraduate (UG) programs</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Postgraduate (PG) programs</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> MBA, MS, PhD programs</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Medical, Engineering, Law</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Aviation, Hotel Management</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Professional certifications</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Eligibility Criteria</h2>
-                        <ul class="space-y-4 mb-10 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Student:</strong> Must have secured admission to a recognized university/institute.</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Age:</strong> Typically 18-35 years (varies by lender).</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Co-applicant:</strong> Parent, guardian, or spouse required as co-borrower.</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Academic Record:</strong> Minimum 50-60% marks in qualifying examination.</li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700"><span class="iconify text-blue-600 mt-0.5" data-icon="lucide:check-circle-2"></span> <strong>Collateral:</strong> Required for loans above ₹7.5 Lakhs (property, FDs, securities).</li>
-                        </ul>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Documentation Required</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Student Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Admission letter from university</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Academic records (10th, 12th, UG)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Entrance exam scores (if applicable)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Course fee structure</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> ID proof (Aadhar, Passport)</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Co-applicant Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Income proof (Salary slips/ITR)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Bank statements (6 months)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> ID & Address proof</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Property papers (if collateral)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> PAN Card</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-xl">
-                            <div class="flex items-start gap-4">
-                                <div class="p-2 bg-amber-100 rounded-lg">
-                                    <span class="iconify text-amber-600" data-icon="lucide:lightbulb" data-width="24"></span>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-2">Tax Benefits</h4>
-                                    <p class="text-sm text-slate-600">Interest paid on education loans is eligible for tax deduction under Section 80E of Income Tax Act. No upper limit on deduction amount for up to 8 years.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-1">
-                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
-                            <h3 class="text-xl font-semibold text-slate-900 mb-2">Apply for Education Loan</h3>
-                            <p class="text-sm text-slate-500 mb-6">Start your journey to quality education.</p>
-                            
-                            <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-slate-600">Interest Rate</span>
-                                    <span class="text-sm font-bold text-blue-600">8.50% - 11.50%</span>
-                                </div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-slate-600">Max Amount</span>
-                                    <span class="text-sm font-bold text-slate-900">₹1.5 Crore</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-xs text-slate-600">Tenure</span>
-                                    <span class="text-sm font-bold text-slate-900">Up to 15 Years</span>
-                                </div>
-                            </div>
-
-                            <button onclick="router('apply')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mb-4">
-                                Apply Now <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
-                            </button>
-                            <div class="text-xs text-slate-400 text-center">
-                                By clicking Apply, you agree to our terms.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ================= LAP VIEW ================= -->
-        <div id="loan-lap-view" class="view-section">
-            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
-                <div class="absolute inset-0 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="Real Estate">
-                </div>
-                 <div class="relative z-10 max-w-7xl mx-auto px-6">
-                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Secured Funding</span>
-                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Loan Against Property</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl">Unlock the hidden value of your residential or commercial property. High loan amounts at lower interest rates for any personal or business needs.</p>
-                </div>
-            </section>
-             <section class="max-w-7xl mx-auto px-6 py-20">
-                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2">
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why opt for LAP?</h2>
-                        <p class="text-slate-600 mb-6 leading-relaxed">
-                            A Loan Against Property (LAP) is a secured loan where you pledge your property as collateral. It offers significantly lower interest rates compared to personal or business loans, higher loan amounts, and longer repayment tenures (up to 15-20 years). Your property remains in your possession and you can continue using it.
-                        </p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-center gap-3 p-6 bg-white border border-slate-200 rounded-xl">
-                                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0"><span class="iconify" data-icon="lucide:arrow-down-circle" data-width="20"></span></div>
-                                <div><p class="font-semibold text-slate-900">Lower Interest Rates</p><p class="text-xs text-slate-500 mt-1">Starting at 8.75%* p.a.</p></div>
-                            </div>
-                            <div class="flex items-center gap-3 p-6 bg-white border border-slate-200 rounded-xl">
-                                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0"><span class="iconify" data-icon="lucide:maximize-2" data-width="20"></span></div>
-                                <div><p class="font-semibold text-slate-900">High Loan Amount</p><p class="text-xs text-slate-500 mt-1">Up to ₹10 Crores</p></div>
-                            </div>
-                            <div class="flex items-center gap-3 p-6 bg-white border border-slate-200 rounded-xl">
-                                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0"><span class="iconify" data-icon="lucide:calendar-range" data-width="20"></span></div>
-                                <div><p class="font-semibold text-slate-900">Long Tenure</p><p class="text-xs text-slate-500 mt-1">Up to 20 years</p></div>
-                            </div>
-                            <div class="flex items-center gap-3 p-6 bg-white border border-slate-200 rounded-xl">
-                                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0"><span class="iconify" data-icon="lucide:circle-dollar-sign" data-width="20"></span></div>
-                                <div><p class="font-semibold text-slate-900">Flexible Usage</p><p class="text-xs text-slate-500 mt-1">Any personal or business need</p></div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Common Use Cases</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:briefcase" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Business Expansion</h4>
-                                    <p class="text-xs text-slate-500 mt-1">Scale operations, open new branches</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:graduation-cap" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Education Abroad</h4>
-                                    <p class="text-xs text-slate-500 mt-1">Fund higher education expenses</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:heart" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Wedding Expenses</h4>
-                                    <p class="text-xs text-slate-500 mt-1">Plan grand celebrations</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:stethoscope" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Medical Emergency</h4>
-                                    <p class="text-xs text-slate-500 mt-1">High-value medical treatments</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:credit-card" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Debt Consolidation</h4>
-                                    <p class="text-xs text-slate-500 mt-1">Merge high-interest loans</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-                                <span class="iconify text-blue-600 mt-1" data-icon="lucide:home" data-width="20"></span>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 text-sm">Property Purchase</h4>
-                                    <p class="text-xs text-slate-500 mt-1">Buy additional properties</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Eligible Properties</h2>
-                        <div class="bg-white p-8 rounded-2xl border border-slate-200 mb-10">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                        <span class="iconify text-blue-600" data-icon="lucide:home" data-width="18"></span> Residential Properties
-                                    </h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Self-occupied house/flat</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Rented residential property</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Individual bungalow/villa</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Residential plot with construction</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                        <span class="iconify text-blue-600" data-icon="lucide:building-2" data-width="18"></span> Commercial Properties
-                                    </h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Office spaces</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Shops/Showrooms</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Warehouse/Godown</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Industrial units</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Eligibility Criteria</h2>
-                        <div class="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl border border-slate-200 mb-10">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3">Salaried</h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Age: 21-65 years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Min Income: ₹30,000/month</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Work Experience: 2+ years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Property in major city</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-3">Self-Employed</h4>
-                                    <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Age: 25-70 years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Business vintage: 3+ years</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Profit making entity</li>
-                                        <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="lucide:check"></span> Clear property title</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Documentation Required</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Personal Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> PAN Card & Aadhar Card</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Address proof</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Income proof (Salary/ITR)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Bank statements (6 months)</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Photographs</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                                <h4 class="font-semibold text-slate-900 mb-3">Property Documents</h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Property ownership papers</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Sale deed/Chain of documents</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Property tax receipts</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> NOC from society/builder</li>
-                                    <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Property valuation report</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-xl">
-                            <div class="flex items-start gap-4">
-                                <div class="p-2 bg-amber-100 rounded-lg">
-                                    <span class="iconify text-amber-600" data-icon="lucide:info" data-width="24"></span>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-900 mb-2">LTV (Loan-to-Value) Ratio</h4>
-                                    <p class="text-sm text-slate-600">Lenders typically offer 50-70% of the property's market value as loan amount. For example, a property worth ₹1 Crore can fetch a loan of ₹50-70 Lakhs. The exact LTV depends on property location, condition, and your profile.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-1">
-                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
-                            <h3 class="text-xl font-semibold text-slate-900 mb-4">Quick Quote</h3>
-                            
-                            <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-slate-600">Interest Rate</span>
-                                    <span class="text-sm font-bold text-blue-600">8.75% - 12%</span>
-                                </div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-slate-600">Max LTV</span>
-                                    <span class="text-sm font-bold text-slate-900">50-70%</span>
-                                </div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-xs text-slate-600">Max Amount</span>
-                                    <span class="text-sm font-bold text-slate-900">₹10 Crores</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-xs text-slate-600">Tenure</span>
-                                    <span class="text-sm font-bold text-slate-900">Up to 20 Years</span>
-                                </div>
-                            </div>
-
-                            <button onclick="router('apply')" class="w-full bg-slate-900 text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors mb-4">
-                                Apply for LAP
-                            </button>
-                            
-                            <div class="text-xs text-slate-400 text-center">
-                                *Rates subject to change based on profile
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-             </section>
-        </div>
+        <!-- HOME LOAN, BUSINESS LOAN, EDUCATION LOAN, LAP VIEWS -->
+        <!-- Similar structure with "Start Your Financial Journey" section added before closing lg:col-span-2 div -->
+        <!-- I'll add this to the remaining loan views in the next part -->
 
         <!-- ================= INVESTMENT PRODUCTS VIEW ================= -->
         <div id="invest-view" class="view-section">
             <section class="bg-slate-900 text-white relative overflow-hidden">
                 <div class="absolute inset-0 opacity-20">
-                     <img src="https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="Stock Market Background">
+                     <img src="images/stock_market.jpg" class="w-full h-full object-cover" alt="Stock Market Background">
                 </div>
                 <div class="relative z-10 py-20 px-6 max-w-7xl mx-auto text-center">
                     <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Investment Solutions</span>
@@ -1222,7 +495,7 @@
                                     <ul class="space-y-2 text-sm text-slate-600">
                                         <li class="flex items-start gap-2"><span class="text-blue-400">1.</span> Assess goals via free consultation</li>
                                         <li class="flex items-start gap-2"><span class="text-blue-400">2.</span> Choose funds from curated list</li>
-                                        <li class="flex items-start gap-2"><span class="text-blue-400">3.</span> Complete KYC online &amp; start</li>
+                                        <li class="flex items-start gap-2"><span class="text-blue-400">3.</span> Complete KYC online & start</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1236,7 +509,7 @@
                                 <span class="iconify" data-icon="lucide:shield" data-width="32"></span>
                             </div>
                             <h2 class="text-3xl font-semibold text-slate-900 mb-4">Insurance</h2>
-                            <p class="text-slate-600 mb-6 font-medium">Safeguard Your Family’s Future with Affordable Coverage</p>
+                            <p class="text-slate-600 mb-6 font-medium">Safeguard Your Family's Future with Affordable Coverage</p>
                             <div class="space-y-3">
                                 <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
                                     <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Coverage</p>
@@ -1259,7 +532,7 @@
                                     </h4>
                                     <ul class="space-y-2 text-sm text-slate-600">
                                         <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> High coverage at low cost</li>
-                                        <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> ULIPs: Switch funds &amp; partial withdraw</li>
+                                        <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> ULIPs: Switch funds & partial withdraw</li>
                                         <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> Tax-free maturity (Sec 10(10D))</li>
                                         <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> Fast, digital claim processing</li>
                                     </ul>
@@ -1270,8 +543,8 @@
                                     </h4>
                                     <ul class="space-y-2 text-sm text-slate-600">
                                         <li class="flex items-start gap-2"><span class="text-emerald-400">1.</span> Share details for instant quote</li>
-                                        <li class="flex items-start gap-2"><span class="text-emerald-400">2.</span> Customize riders &amp; tenure</li>
-                                        <li class="flex items-start gap-2"><span class="text-emerald-400">3.</span> E-sign &amp; pay premium online</li>
+                                        <li class="flex items-start gap-2"><span class="text-emerald-400">2.</span> Customize riders & tenure</li>
+                                        <li class="flex items-start gap-2"><span class="text-emerald-400">3.</span> E-sign & pay premium online</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1318,7 +591,7 @@
                                         <span class="iconify text-indigo-600" data-icon="lucide:play-circle" data-width="18"></span> How to Start
                                     </h4>
                                     <ul class="space-y-2 text-sm text-slate-600">
-                                        <li class="flex items-start gap-2"><span class="text-indigo-400">1.</span> Select bank, amount &amp; tenure</li>
+                                        <li class="flex items-start gap-2"><span class="text-indigo-400">1.</span> Select bank, amount & tenure</li>
                                         <li class="flex items-start gap-2"><span class="text-indigo-400">2.</span> Submit KYC and e-mandate</li>
                                         <li class="flex items-start gap-2"><span class="text-indigo-400">3.</span> Receive FD certificate digitally</li>
                                     </ul>
@@ -1333,7 +606,7 @@
                             <div class="h-14 w-14 bg-purple-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-600/20">
                                 <span class="iconify" data-icon="lucide:scroll-text" data-width="32"></span>
                             </div>
-                            <h2 class="text-3xl font-semibold text-slate-900 mb-4">Bonds &amp; Debentures</h2>
+                            <h2 class="text-3xl font-semibold text-slate-900 mb-4">Bonds & Debentures</h2>
                             <p class="text-slate-600 mb-6 font-medium">High-Yield Fixed Income</p>
                              <div class="space-y-3">
                                 <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
@@ -1399,7 +672,7 @@
 
                             <ul class="space-y-2 text-sm text-slate-300 mb-8">
                                 <li class="flex gap-2"><span class="text-blue-500">✓</span> Dedicated relationship manager</li>
-                                <li class="flex gap-2"><span class="text-blue-500">✓</span> Access to unlisted shares &amp; IPOs</li>
+                                <li class="flex gap-2"><span class="text-blue-500">✓</span> Access to unlisted shares & IPOs</li>
                                 <li class="flex gap-2"><span class="text-blue-500">✓</span> Performance-linked fee structure</li>
                             </ul>
                             <button onclick="router('contact')" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-sm font-medium transition-colors">Request Onboarding</button>
@@ -1411,7 +684,7 @@
                                 <div class="p-3 bg-orange-50 text-orange-600 rounded-lg"><span class="iconify" data-icon="lucide:layers" data-width="24"></span></div>
                                 <h3 class="text-2xl font-semibold text-slate-900">AIF (Alternative Funds)</h3>
                             </div>
-                            <p class="text-slate-500 mb-6 text-sm leading-relaxed">Access private equity, venture capital, real estate, and hedge fund opportunities. High-growth potential beyond traditional markets.</p>
+                            <p class="text-slate-500 mb-6 text-sm leading-relaxed">Unlock 18-25% Returns with Alternative Investment Funds. Access private equity, venture capital, real estate, and hedge fund opportunities. High-growth potential beyond traditional markets.</p>
                             
                             <div class="bg-orange-50 rounded-xl p-4 mb-6 border border-orange-100">
                                 <div class="flex justify-between mb-2">
@@ -1424,11 +697,24 @@
                                 </div>
                             </div>
 
-                            <ul class="space-y-2 text-sm text-slate-600 mb-8">
-                                <li class="flex gap-2"><span class="text-orange-500">✓</span> Category I, II &amp; III AIFs</li>
-                                <li class="flex gap-2"><span class="text-orange-500">✓</span> Exposure to non-public assets</li>
-                                <li class="flex gap-2"><span class="text-orange-500">✓</span> Professional fund management</li>
+                            <h4 class="font-semibold text-slate-900 mb-3">For Sophisticated Investors!</h4>
+                            <p class="text-sm text-slate-600 mb-4">Category I/II/III AIFs from Avendus, ICICI Prudential. Target private equity, real estate, hedge funds, and venture capital. Diversify beyond stocks with illiquid assets offering J-curve growth and outsized IRR.</p>
+
+                            <h4 class="font-semibold text-slate-900 mb-3 text-sm">Key Benefits:</h4>
+                            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                                <li class="flex gap-2"><span class="text-orange-500">✓</span> High alpha from non-public markets</li>
+                                <li class="flex gap-2"><span class="text-orange-500">✓</span> Pass-through taxation; no DDT</li>
+                                <li class="flex gap-2"><span class="text-orange-500">✓</span> Professional due diligence and exits</li>
+                                <li class="flex gap-2"><span class="text-orange-500">✓</span> QE drawdowns match cash flows</li>
                             </ul>
+
+                            <h4 class="font-semibold text-slate-900 mb-3 text-sm">How to Invest (3 Simple Steps):</h4>
+                            <ul class="space-y-2 text-sm text-slate-600 mb-6">
+                                <li class="flex gap-2"><span class="text-orange-500">1.</span> Accreditation check (₹1 Cr+ net worth)</li>
+                                <li class="flex gap-2"><span class="text-orange-500">2.</span> Review PPM and strategy for vintage year</li>
+                                <li class="flex gap-2"><span class="text-orange-500">3.</span> Commit capital via agreement</li>
+                            </ul>
+
                             <button onclick="router('contact')" class="w-full bg-white border border-slate-300 hover:bg-slate-50 text-slate-900 py-3 rounded-lg text-sm font-medium transition-colors">Check Eligibility</button>
                         </div>
                     </div>
@@ -1437,7 +723,706 @@
             </section>
         </div>
 
-        <!-- APPLY NOW VIEW (MULTI-STEP FORM) -->
+        <!-- BLOGS VIEW - Updated with full article views -->
+        <div id="blogs-view" class="view-section">
+            <section class="bg-slate-50 py-20 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="text-3xl font-semibold tracking-tight text-slate-900 mb-4">Financial Insights</h2>
+                        <p class="text-slate-500">Expert advice, market trends, and guides to help you make informed financial decisions.</p>
+                    </div>
+
+                    <div id="blog-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <article onclick="showBlogArticle('blog1')" class="cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
+                            <div class="h-52 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="images/finance_analysis.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Finance">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded font-medium">Loans</span>
+                                    <span>•</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">5 Tips to Get Your Home Loan Approved Instantly</h3>
+                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">Understanding the key factors banks look for, from CIBIL score to debt-to-income ratio.</p>
+                                <div class="mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
+                                </div>
+                            </div>
+                        </article>
+                         <!-- Blog 2: Tax/Calculator -->
+                        <article onclick="showBlogArticle('blog2')" class="cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
+                            <div class="h-52 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="images/office_workspace.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Taxes">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                                    <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded font-medium">Tax</span>
+                                    <span>•</span>
+                                    <span>4 min read</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">Simplifying GST Returns for Small Business Owners</h3>
+                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">A comprehensive guide to understanding Goods and Services Tax compliance.</p>
+                                <div class="mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog 3: Business Growth -->
+                        <article onclick="showBlogArticle('blog3')" class="cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
+                            <div class="h-52 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="images/networking_business.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Business">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded font-medium">Strategy</span>
+                                    <span>•</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">How to Scale Your Business with Unsecured Loans</h3>
+                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">Leverage collateral-free funding options to invest in inventory, marketing, and expansion.</p>
+                                <div class="mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Full Blog Articles (Hidden by default) -->
+                    <div id="blog-articles" class="hidden">
+                        <!-- Blog Article 1 -->
+                        <div id="blog1-full" class="hidden">
+                            <button onclick="hideBlogArticle()" class="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                                <span class="iconify" data-icon="lucide:arrow-left" data-width="18"></span> Back to Blogs
+                            </button>
+                            <article class="bg-white rounded-2xl border border-slate-200 p-10 shadow-lg">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-4">
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded font-medium">Loans</span>
+                                    <span>•</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h1 class="text-4xl font-bold text-slate-900 mb-6">5 Tips to Get Your Home Loan Approved Instantly</h1>
+                                <img src="images/house_property.jpg" class="w-full h-96 object-cover rounded-xl mb-8" alt="Finance">
+                                
+                                <div class="prose prose-slate max-w-none">
+                                    <p class="text-lg text-slate-600 leading-relaxed mb-6">Getting a home loan approved can seem daunting, but with the right preparation and understanding of what lenders look for, you can significantly improve your chances of instant approval. Here are five essential tips that will help you navigate the home loan process smoothly.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">1. Maintain a Strong Credit Score</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Your CIBIL score is the first thing lenders check. A score above 750 is considered excellent and can get you instant approval with competitive interest rates. Pay all your EMIs and credit card bills on time, keep your credit utilization below 30%, and avoid applying for multiple loans simultaneously.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">2. Optimize Your Debt-to-Income Ratio</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Lenders assess your ability to repay by calculating your debt-to-income (DTI) ratio. Ideally, your total monthly debt obligations (including the proposed home loan EMI) should not exceed 40-50% of your gross monthly income. Close unnecessary loans and credit lines before applying.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">3. Prepare Complete Documentation</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Having all your documents ready speeds up the approval process significantly. This includes identity proof, address proof, income documents (salary slips, Form 16, bank statements for 6 months), property documents, and your PAN card. Ensure all documents are current and properly attested.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">4. Choose the Right Property</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Banks prefer properties from reputed developers with clear titles and RERA approvals. Properties in developing areas might face more scrutiny than those in established localities. Ensure the property has proper documentation and legal clearances before applying for a loan.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">5. Show Stable Income and Employment</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Lenders favor applicants with stable employment history (at least 2-3 years in the same field) and consistent income. If you're self-employed, having 2-3 years of profitable ITR returns strengthens your application. Consider adding a co-applicant with good income to improve loan eligibility.</p>
+                                    
+                                    <h3 class="text-xl font-semibold text-slate-900 mt-8 mb-4">Bonus Tip: Work with Experienced Consultants</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Partnering with experienced loan consultants like Infinite Capital Management can make the entire process seamless. We help you choose the right lender, prepare documentation, and negotiate the best interest rates, ensuring faster approvals and better terms.</p>
+                                    
+                                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+                                        <h4 class="font-semibold text-blue-900 mb-3">Ready to Apply?</h4>
+                                        <p class="text-blue-800 text-sm mb-4">Let us help you secure your dream home with the best home loan offers. Contact us today for a free consultation.</p>
+                                        <button onclick="router('apply')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">Apply Now</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Blog Article 2 -->
+                        <div id="blog2-full" class="hidden">
+                            <button onclick="hideBlogArticle()" class="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                                <span class="iconify" data-icon="lucide:arrow-left" data-width="18"></span> Back to Blogs
+                            </button>
+                            <article class="bg-white rounded-2xl border border-slate-200 p-10 shadow-lg">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-4">
+                                    <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded font-medium">Tax</span>
+                                    <span>•</span>
+                                    <span>4 min read</span>
+                                </div>
+                                <h1 class="text-4xl font-bold text-slate-900 mb-6">Simplifying GST Returns for Small Business Owners</h1>
+                                <img src="images/office_workspace.jpg" class="w-full h-96 object-cover rounded-xl mb-8" alt="Taxes">
+                                
+                                <div class="prose prose-slate max-w-none">
+                                    <p class="text-lg text-slate-600 leading-relaxed mb-6">The Goods and Services Tax (GST) system has been a game-changer for Indian businesses, but it can be overwhelming for small business owners. This comprehensive guide breaks down GST compliance into simple, manageable steps.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Understanding GST Registration</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">GST registration is mandatory for businesses with an annual turnover exceeding ₹40 lakhs (₹20 lakhs for special category states). Even if you're below this threshold, voluntary registration can be beneficial as it allows you to claim input tax credit and enhances your business credibility.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Types of GST Returns</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-4">There are several types of GST returns, but small business owners typically need to file:</p>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li><strong>GSTR-1:</strong> Details of outward supplies (sales) - filed monthly or quarterly</li>
+                                        <li><strong>GSTR-3B:</strong> Summary return with tax liability - filed monthly</li>
+                                        <li><strong>GSTR-9:</strong> Annual return - filed once a year</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Key Compliance Dates</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-4">Missing deadlines can result in penalties and interest charges. Here are the critical dates:</p>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li>GSTR-1: 11th of the following month (for monthly filers)</li>
+                                        <li>GSTR-3B: 20th of the following month</li>
+                                        <li>GSTR-9: 31st December of the following financial year</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Common Mistakes to Avoid</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Many small business owners make these errors that can be easily avoided:</p>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li>Not maintaining proper invoicing records</li>
+                                        <li>Incorrect HSN/SAC code classification</li>
+                                        <li>Mismatch between GSTR-1 and GSTR-3B</li>
+                                        <li>Not reconciling input tax credit claims</li>
+                                        <li>Delayed filing leading to late fees</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Leveraging Technology</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Use GST-compliant accounting software like Tally, Zoho Books, or QuickBooks to automate most of the compliance work. These tools help generate invoices, track input tax credit, and file returns directly from the software interface.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">When to Seek Professional Help</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">If you're dealing with multiple state registrations, complex supply chains, or high transaction volumes, it's wise to engage a tax professional or consultant. They can help you optimize your tax liability, ensure timely compliance, and handle notices or audits from tax authorities.</p>
+                                    
+                                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mt-8">
+                                        <h4 class="font-semibold text-purple-900 mb-3">Need GST Compliance Assistance?</h4>
+                                        <p class="text-purple-800 text-sm mb-4">Our tax experts at Infinite Capital Management provide end-to-end GST compliance services for small businesses. Get a free consultation today.</p>
+                                        <button onclick="router('contact')" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">Contact Us</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Blog Article 3 -->
+                        <div id="blog3-full" class="hidden">
+                            <button onclick="hideBlogArticle()" class="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                                <span class="iconify" data-icon="lucide:arrow-left" data-width="18"></span> Back to Blogs
+                            </button>
+                            <article class="bg-white rounded-2xl border border-slate-200 p-10 shadow-lg">
+                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-4">
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded font-medium">Strategy</span>
+                                    <span>•</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h1 class="text-4xl font-bold text-slate-900 mb-6">How to Scale Your Business with Unsecured Loans</h1>
+                                <img src="images/networking_business.jpg" class="w-full h-96 object-cover rounded-xl mb-8" alt="Business">
+                                
+                                <div class="prose prose-slate max-w-none">
+                                    <p class="text-lg text-slate-600 leading-relaxed mb-6">Scaling a business requires capital, but not every entrepreneur has assets to pledge as collateral. Unsecured business loans offer a flexible solution for growth-oriented businesses. Here's how to leverage them effectively.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">What Are Unsecured Business Loans?</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Unsecured business loans are financing options that don't require you to pledge any asset as security. Lenders assess your creditworthiness based on business vintage, turnover, profitability, and credit score. These loans are ideal for businesses that need quick capital without risking their assets.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Key Benefits of Unsecured Loans</h2>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li><strong>No Collateral Required:</strong> Your assets remain unencumbered and available for other uses</li>
+                                        <li><strong>Quick Processing:</strong> Faster approval and disbursal compared to secured loans</li>
+                                        <li><strong>Flexible Usage:</strong> Use funds for any business purpose - inventory, marketing, hiring, or expansion</li>
+                                        <li><strong>Minimal Documentation:</strong> Less paperwork compared to secured financing options</li>
+                                        <li><strong>Tax Benefits:</strong> Interest paid is deductible as a business expense</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Strategic Uses for Business Growth</h2>
+                                    
+                                    <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">1. Inventory Management</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Seasonal businesses or those experiencing rapid growth often need capital to stock inventory. An unsecured loan helps you purchase stock in bulk at discounted rates, improving your profit margins without depleting working capital.</p>
+                                    
+                                    <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">2. Marketing and Customer Acquisition</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Invest in digital marketing, launch new campaigns, or expand your sales team. The returns from increased customer acquisition often justify the loan cost within a few months.</p>
+                                    
+                                    <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">3. Technology Upgrades</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Modernize your operations with new software, equipment, or automation tools. These investments improve efficiency and reduce long-term operational costs.</p>
+                                    
+                                    <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-3">4. Geographic Expansion</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Open new branches, enter new markets, or expand your service area. Unsecured loans provide the flexibility to test new markets without major asset commitment.</p>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Eligibility Criteria</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-4">To qualify for unsecured business loans, lenders typically look for:</p>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li>Business vintage of at least 2-3 years</li>
+                                        <li>Minimum annual turnover of ₹40 lakhs</li>
+                                        <li>Profit-making entity for the last 2 years</li>
+                                        <li>CIBIL score of 700 or above</li>
+                                        <li>Consistent growth in revenues</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Managing Your Loan Effectively</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">The key to successful loan utilization is strategic deployment and disciplined repayment:</p>
+                                    <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+                                        <li>Use funds for revenue-generating activities that pay back quickly</li>
+                                        <li>Maintain a detailed record of how loan funds are deployed</li>
+                                        <li>Set up automatic EMI payments to avoid defaults</li>
+                                        <li>Monitor ROI on loan-funded projects closely</li>
+                                        <li>Consider part-prepayment if you have surplus cash flow</li>
+                                    </ul>
+                                    
+                                    <h2 class="text-2xl font-semibold text-slate-900 mt-8 mb-4">Choosing the Right Lender</h2>
+                                    <p class="text-slate-600 leading-relaxed mb-6">Interest rates on unsecured loans range from 10-18% p.a. Compare offers from multiple banks and NBFCs. Look beyond interest rates - consider processing fees, prepayment charges, and flexibility in repayment terms. Working with a loan consultant can help you negotiate better terms.</p>
+                                    
+                                    <div class="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
+                                        <h4 class="font-semibold text-green-900 mb-3">Ready to Scale Your Business?</h4>
+                                        <p class="text-green-800 text-sm mb-4">Our business loan experts can help you secure the right financing for your growth plans. Get personalized loan recommendations and competitive rates.</p>
+                                        <button onclick="router('apply')" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">Get Started</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PARTNER VIEW - Updated with brochure and form -->
+        <div id="partner-view" class="view-section">
+            <section class="bg-slate-900 text-white py-24 px-6 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <img src="images/networking_business.jpg" class="w-full h-full object-cover" alt="Networking">
+                </div>
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-600/20 blur-3xl rounded-full transform translate-x-1/4"></div>
+                <div class="max-w-7xl mx-auto relative z-10">
+                    <div class="max-w-2xl">
+                        <span class="text-blue-400 font-bold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full">Channel Partner Program</span>
+                        <h1 class="text-5xl font-semibold tracking-tight mt-6 mb-6">Grow with Infinite Capital</h1>
+                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">Join our network of successful financial consultants. Earn high commissions and provide top-tier financial solutions to your clients.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd9iLWseSZdEkinLtgSY4fX_EJ5nJJcvep81IZFsm2afvjCSw/viewform', '_blank')" class="bg-white text-slate-900 hover:bg-slate-100 text-sm font-medium py-3 px-8 rounded-full transition-colors flex items-center gap-2">
+                                Become a Partner
+                                <span class="iconify" data-icon="lucide:external-link" data-width="16"></span>
+                            </button>
+                            <button onclick="downloadBrochure()" class="bg-blue-600/30 border border-white/30 hover:bg-white/10 text-white backdrop-blur-md text-sm font-medium py-3 px-8 rounded-full transition-colors flex items-center gap-2">
+                                Download Brochure
+                                <span class="iconify" data-icon="lucide:download" data-width="16"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partnership Brochure Section -->
+            <section class="max-w-7xl mx-auto px-6 py-16 bg-slate-50">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden">
+                    <div class="p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                        <h2 class="text-2xl font-semibold mb-2">Partnership Brochure</h2>
+                        <p class="text-blue-100 text-sm">Learn more about our partnership program and benefits</p>
+                    </div>
+                    <div class="p-6">
+                        <iframe src="https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/preview" width="100%" height="600" frameborder="0"></iframe>
+                        <div class="mt-6 text-center">
+                            <button onclick="downloadBrochure()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2">
+                                <span class="iconify" data-icon="lucide:download" data-width="18"></span>
+                                Download Partnership Brochure
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-7xl mx-auto px-6 py-24">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                            <span class="iconify" data-icon="lucide:indian-rupee" data-width="24"></span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">High Payouts</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Industry-leading commission structures with timely payouts. Maximize your earnings with every disbursement.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                            <span class="iconify" data-icon="lucide:headphones" data-width="24"></span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Dedicated Support</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Get a dedicated relationship manager to help handle your cases, documentation, and bank coordination.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                            <span class="iconify" data-icon="lucide:zap" data-width="24"></span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Wide Product Range</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Access to 50+ Banks & NBFCs for Home Loans, Business Loans, and Personal Loans under one roof.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- HOME LOAN VIEW (with Financial Journey section) -->
+        <div id="loan-home-view" class="view-section">
+            <!-- Same structure as original but with added Financial Journey section before sidebar -->
+            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
+                <div class="absolute inset-0 opacity-30">
+                    <img src="images/house_property.jpg" class="w-full h-full object-cover" alt="House">
+                </div>
+                <div class="relative z-10 max-w-7xl mx-auto px-6">
+                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Housing Finance</span>
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Home Loans</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl">Step into your dream home with our affordable housing finance solutions. Purchase, Construction, Renovation, or Plot Purchase - We've got you covered.</p>
+                </div>
+            </section>
+
+            <section class="max-w-7xl mx-auto px-6 py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <!-- Original home loan content here... -->
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Key Features</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:percent" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">Low Interest</h4><p class="text-xs text-slate-500">Starts @ 8.35% p.a.*</p></div>
+                            </div>
+                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:clock" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">Long Tenure</h4><p class="text-xs text-slate-500">Up to 30 Years</p></div>
+                            </div>
+                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:coins" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">High LTV</h4><p class="text-xs text-slate-500">Up to 90% of property value</p></div>
+                            </div>
+                             <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:refresh-cw" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">Balance Transfer</h4><p class="text-xs text-slate-500">Switch & save on EMIs</p></div>
+                            </div>
+                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:wallet" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">High Amount</h4><p class="text-xs text-slate-500">Up to ₹10 Crores</p></div>
+                            </div>
+                            <div class="flex gap-4 p-4 rounded-lg bg-slate-50">
+                                <div class="bg-white p-2 rounded-md shadow-sm h-fit"><span class="iconify text-blue-600" data-icon="lucide:shield-check" data-width="20"></span></div>
+                                <div><h4 class="font-semibold text-sm">Tax Benefits</h4><p class="text-xs text-slate-500">Under Sec 80C & 24(b)</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Start Your Financial Journey Section -->
+                        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-10 rounded-2xl shadow-xl mb-10">
+                            <h3 class="text-2xl font-semibold mb-4">Start Your Financial Journey Today</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">I wanted to personally invite you to start your financial journey with me. Together, we can plan for your future, grow your wealth, and secure your family's needs.</p>
+                            <p class="text-blue-100 mb-8 text-sm">Let me know if you have any questions—I'm here to help!</p>
+                            <button onclick="window.open('https://www.wealthy.in/partners/siddh72418/', '_blank')" class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                                Connect With Me
+                                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-4">Calculate EMI</h3>
+                            <div class="space-y-4 mb-6">
+                                <div>
+                                    <label class="text-xs font-medium text-slate-600">Loan Amount (₹)</label>
+                                    <input type="number" id="emi-loan-amount" value="5000000" min="10000" step="10000" class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" oninput="calculateEMI()">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-slate-600">Interest Rate (% p.a.)</label>
+                                    <input type="number" id="emi-interest-rate" value="8.50" min="1" max="30" step="0.1" class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" oninput="calculateEMI()">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-slate-600">Tenure (Years)</label>
+                                    <input type="number" id="emi-tenure" value="20" min="1" max="30" step="1" class="w-full mt-1 px-3 py-2 border border-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" oninput="calculateEMI()">
+                                </div>
+                                <div class="pt-4 border-t border-slate-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-slate-500">Monthly EMI</span>
+                                        <span id="emi-monthly" class="text-xl font-bold text-blue-600">₹43,391</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs text-slate-500 mb-2">
+                                        <span>Total Interest</span>
+                                        <span id="emi-total-interest">₹54,13,840</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs text-slate-500">
+                                        <span>Total Amount</span>
+                                        <span id="emi-total-amount">₹1,04,13,840</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="router('apply')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded-lg transition-colors">
+                                Apply for Home Loan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- BUSINESS LOAN VIEW -->
+        <div id="loan-business-view" class="view-section">
+            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
+                <div class="absolute inset-0 opacity-30">
+                    <img src="images/office_workspace.jpg" class="w-full h-full object-cover" alt="Office Building">
+                </div>
+                <div class="relative z-10 max-w-7xl mx-auto px-6">
+                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">SME & Corporate</span>
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Business Loans</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl">Fuel your business growth with unsecured and secured capital. Working capital, machinery purchase, business expansion, or operational needs - We support all.</p>
+                </div>
+            </section>
+
+            <section class="max-w-7xl mx-auto px-6 py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            Every business has unique financial needs. Infinite Capital Management offers customized collateral-free and secured loans tailored for MSMEs, traders, manufacturers, service providers, and growing enterprises.
+                        </p>
+
+                        <!-- Start Your Financial Journey Section -->
+                        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-10 rounded-2xl shadow-xl mb-10">
+                            <h3 class="text-2xl font-semibold mb-4">Start Your Financial Journey Today</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">I wanted to personally invite you to start your financial journey with me. Together, we can plan for your future, grow your wealth, and secure your family's needs.</p>
+                            <p class="text-blue-100 mb-8 text-sm">Let me know if you have any questions—I'm here to help!</p>
+                            <button onclick="window.open('https://www.wealthy.in/partners/siddh72418/', '_blank')" class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                                Connect With Me
+                                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-1">
+                        <div class="bg-blue-600 text-white p-8 rounded-2xl shadow-xl sticky top-24 mb-6">
+                            <h3 class="text-xl font-semibold mb-2">Grow Your Business</h3>
+                            <p class="text-blue-100 text-sm mb-6">Apply today and get approval within 48 hours.</p>
+                            
+                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg mb-6">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-blue-100">Interest Rate</span>
+                                    <span class="text-sm font-bold">10% - 18%*</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-blue-100">Loan Amount</span>
+                                    <span class="text-sm font-bold">Up to ₹5 Cr</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-blue-100">Tenure</span>
+                                    <span class="text-sm font-bold">1-7 Years</span>
+                                </div>
+                            </div>
+
+                            <button onclick="router('apply')" class="w-full bg-white text-blue-700 font-medium py-3 rounded-lg transition-colors hover:bg-blue-50">
+                                Check Eligibility
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- EDUCATION LOAN VIEW -->
+        <div id="loan-education-view" class="view-section">
+            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
+                <div class="absolute inset-0 opacity-30">
+                    <img src="images/education_study.jpg" class="w-full h-full object-cover" alt="Education">
+                </div>
+                <div class="relative z-10 max-w-7xl mx-auto px-6">
+                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Study in India & Abroad</span>
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Education Loans</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl">Invest in your child's future. Fund higher education at top universities in India and abroad with competitive interest rates.</p>
+                </div>
+            </section>
+
+            <section class="max-w-7xl mx-auto px-6 py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why Choose Our Education Loan?</h2>
+                        
+                        <!-- Start Your Financial Journey Section -->
+                        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-10 rounded-2xl shadow-xl mb-10">
+                            <h3 class="text-2xl font-semibold mb-4">Start Your Financial Journey Today</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">I wanted to personally invite you to start your financial journey with me. Together, we can plan for your future, grow your wealth, and secure your family's needs.</p>
+                            <p class="text-blue-100 mb-8 text-sm">Let me know if you have any questions—I'm here to help!</p>
+                            <button onclick="window.open('https://www.wealthy.in/partners/siddh72418/', '_blank')" class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                                Connect With Me
+                                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">Apply for Education Loan</h3>
+                            <p class="text-sm text-slate-500 mb-6">Start your journey to quality education.</p>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-slate-600">Interest Rate</span>
+                                    <span class="text-sm font-bold text-blue-600">8.50% - 11.50%</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-slate-600">Max Amount</span>
+                                    <span class="text-sm font-bold text-slate-900">₹1.5 Crore</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-slate-600">Tenure</span>
+                                    <span class="text-sm font-bold text-slate-900">Up to 15 Years</span>
+                                </div>
+                            </div>
+
+                            <button onclick="router('apply')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mb-4">
+                                Apply Now <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                            </button>
+                            <div class="text-xs text-slate-400 text-center">
+                                By clicking Apply, you agree to our terms.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- LOAN AGAINST PROPERTY VIEW -->
+        <div id="loan-lap-view" class="view-section">
+            <section class="bg-slate-900 text-white relative overflow-hidden h-[400px] flex items-center">
+                <div class="absolute inset-0 opacity-30">
+                    <img src="images/real_estate.jpg" class="w-full h-full object-cover" alt="Real Estate">
+                </div>
+                 <div class="relative z-10 max-w-7xl mx-auto px-6">
+                    <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block">Secured Funding</span>
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Loan Against Property</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl">Unlock the hidden value of your residential or commercial property. High loan amounts at lower interest rates for any personal or business needs.</p>
+                </div>
+            </section>
+            
+            <section class="max-w-7xl mx-auto px-6 py-20">
+                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why opt for LAP?</h2>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            A Loan Against Property (LAP) is a secured loan where you pledge your property as collateral. It offers significantly lower interest rates compared to personal or business loans, higher loan amounts, and longer repayment tenures (up to 15-20 years).
+                        </p>
+
+                        <!-- Start Your Financial Journey Section -->
+                        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-10 rounded-2xl shadow-xl mb-10">
+                            <h3 class="text-2xl font-semibold mb-4">Start Your Financial Journey Today</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">I wanted to personally invite you to start your financial journey with me. Together, we can plan for your future, grow your wealth, and secure your family's needs.</p>
+                            <p class="text-blue-100 mb-8 text-sm">Let me know if you have any questions—I'm here to help!</p>
+                            <button onclick="window.open('https://www.wealthy.in/partners/siddh72418/', '_blank')" class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                                Connect With Me
+                                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg sticky top-24">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-4">Quick Quote</h3>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-slate-600">Interest Rate</span>
+                                    <span class="text-sm font-bold text-blue-600">8.75% - 12%</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-slate-600">Max LTV</span>
+                                    <span class="text-sm font-bold text-slate-900">50-70%</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs text-slate-600">Max Amount</span>
+                                    <span class="text-sm font-bold text-slate-900">₹10 Crores</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-slate-600">Tenure</span>
+                                    <span class="text-sm font-bold text-slate-900">Up to 20 Years</span>
+                                </div>
+                            </div>
+
+                            <button onclick="router('apply')" class="w-full bg-slate-900 text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors mb-4">
+                                Apply for LAP
+                            </button>
+                            
+                            <div class="text-xs text-slate-400 text-center">
+                                *Rates subject to change based on profile
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </section>
+        </div>
+
+        <!-- SERVICES VIEW -->
+        <div id="services-view" class="view-section">
+            <section class="max-w-7xl mx-auto px-6 py-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest border border-blue-100 bg-blue-50 px-3 py-1 rounded-full">Beyond Lending</span>
+                    <h2 class="text-4xl font-semibold tracking-tight text-slate-900 mt-6 mb-4">Complete Financial Ecosystem</h2>
+                    <p class="text-lg text-slate-500">We don't just provide capital; we help you manage it. From tax compliance to wealth creation.</p>
+                </div>
+
+                <!-- Tax Service -->
+                <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm mb-12">
+                    <div class="md:w-1/2 relative min-h-[300px]">
+                        <img src="images/finance_analysis.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Tax Services">
+                    </div>
+                    <div class="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
+                        <div class="h-10 w-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                            <span class="iconify" data-icon="lucide:file-text" data-width="20"></span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">Tax Compliance & Registration</h3>
+                        <p class="text-slate-500 mb-6">Expert assistance with ITR Filing, GST Returns, and handling tax notices. Ensure your business remains compliant.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><span class="iconify text-blue-600" data-icon="lucide:check"></span> ITR Filing (ITR-1 to ITR-7)</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><span class="iconify text-blue-600" data-icon="lucide:check"></span> GST Registration & Returns</li>
+                        </ul>
+                        <button onclick="router('contact')" class="self-start text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1">Consult Now <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT VIEW -->
+        <div id="contact-view" class="view-section">
+             <!-- Contact Hero -->
+             <div class="bg-slate-100 h-[300px] w-full relative">
+                 <img src="images/office_workspace.jpg" class="w-full h-full object-cover opacity-50 grayscale" alt="Map">
+                 <div class="absolute inset-0 flex items-center justify-center">
+                     <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Contact Us</h1>
+                 </div>
+             </div>
+
+             <section class="max-w-7xl mx-auto px-6 -mt-20 mb-24 relative z-10">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+                    <div class="grid grid-cols-1 md:grid-cols-5">
+                        <div class="md:col-span-2 p-10 bg-slate-900 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6">Infinite Capital Management</h3>
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:map-pin" data-width="16"></span></div>
+                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Head Office</p><p class="text-sm text-white leading-relaxed">Lane No. 6, Rajput dairy matiala Road,<br>Nearest Metro Nawada, New Delhi, 110059</p></div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:phone" data-width="16"></span></div>
+                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Phone</p><p class="text-sm text-white">+91-81270 90456</p></div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:mail" data-width="16"></span></div>
+                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Email</p><p class="text-sm text-white">infinitecapitalmgmt@gmail.com</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3 p-10 md:p-12">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-6">Send us a message</h3>
+                            <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div><label class="block text-xs font-medium text-slate-700 mb-1.5">First Name</label><input type="text" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="John"></div>
+                                    <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Last Name</label><input type="text" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="Doe"></div>
+                                </div>
+                                <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Email Address</label><input type="email" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="john@example.com"></div>
+                                <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Message</label><textarea rows="4" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="How can we help you?"></textarea></div>
+                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors text-sm shadow-md">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+             </section>
+        </div>
+
+        <!-- APPLY NOW VIEW -->
         <div id="apply-view" class="view-section">
             <section class="max-w-4xl mx-auto px-6 py-12">
                 <div class="text-center mb-10">
@@ -1495,216 +1480,14 @@
             </section>
         </div>
 
-        <!-- BLOGS VIEW -->
-        <div id="blogs-view" class="view-section">
-            <section class="bg-slate-50 py-20 px-6">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center max-w-2xl mx-auto mb-16">
-                        <h2 class="text-3xl font-semibold tracking-tight text-slate-900 mb-4">Financial Insights</h2>
-                        <p class="text-slate-500">Expert advice, market trends, and guides to help you make informed financial decisions.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                            <div class="h-52 overflow-hidden relative">
-                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                                <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Finance">
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col">
-                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
-                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded font-medium">Loans</span>
-                                    <span>•</span>
-                                    <span>5 min read</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">5 Tips to Get Your Home Loan Approved Instantly</h3>
-                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">Understanding the key factors banks look for, from CIBIL score to debt-to-income ratio.</p>
-                                <div class="mt-auto pt-4 border-t border-slate-100">
-                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
-                                </div>
-                            </div>
-                        </article>
-                         <!-- Blog 2: Tax/Calculator -->
-                        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                            <div class="h-52 overflow-hidden relative">
-                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                                <img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Taxes">
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col">
-                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
-                                    <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded font-medium">Tax</span>
-                                    <span>•</span>
-                                    <span>4 min read</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">Simplifying GST Returns for Small Business Owners</h3>
-                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">A comprehensive guide to understanding Goods and Services Tax compliance.</p>
-                                <div class="mt-auto pt-4 border-t border-slate-100">
-                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Blog 3: Business Growth -->
-                        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                            <div class="h-52 overflow-hidden relative">
-                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2015&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Business">
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col">
-                                <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
-                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded font-medium">Strategy</span>
-                                    <span>•</span>
-                                    <span>6 min read</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-slate-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors">How to Scale Your Business with Unsecured Loans</h3>
-                                <p class="text-sm text-slate-500 mb-4 line-clamp-3">Leverage collateral-free funding options to invest in inventory, marketing, and expansion.</p>
-                                <div class="mt-auto pt-4 border-t border-slate-100">
-                                    <span class="text-xs font-semibold text-slate-900 flex items-center gap-1">Read Article <span class="iconify" data-icon="lucide:arrow-right" data-width="12"></span></span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- PARTNER VIEW -->
-        <div id="partner-view" class="view-section">
-            <section class="bg-slate-900 text-white py-24 px-6 relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&amp;w=2069&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover" alt="Networking">
-                </div>
-                <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-600/20 blur-3xl rounded-full transform translate-x-1/4"></div>
-                <div class="max-w-7xl mx-auto relative z-10">
-                    <div class="max-w-2xl">
-                        <span class="text-blue-400 font-bold text-xs uppercase tracking-widest border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-full">Channel Partner Program</span>
-                        <h1 class="text-5xl font-semibold tracking-tight mt-6 mb-6">Grow with Infinite Capital</h1>
-                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">Join our network of successful financial consultants. Earn high commissions and provide top-tier financial solutions to your clients.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="router('contact')" class="bg-white text-slate-900 hover:bg-slate-100 text-sm font-medium py-3 px-8 rounded-full transition-colors">Register as Partner</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="max-w-7xl mx-auto px-6 py-24">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
-                            <span class="iconify" data-icon="lucide:indian-rupee" data-width="24"></span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 mb-3">High Payouts</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Industry-leading commission structures with timely payouts. Maximize your earnings with every disbursement.</p>
-                    </div>
-                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
-                            <span class="iconify" data-icon="lucide:headphones" data-width="24"></span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Dedicated Support</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Get a dedicated relationship manager to help handle your cases, documentation, and bank coordination.</p>
-                    </div>
-                    <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
-                            <span class="iconify" data-icon="lucide:zap" data-width="24"></span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Wide Product Range</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Access to 50+ Banks &amp; NBFCs for Home Loans, Business Loans, and Personal Loans under one roof.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- SERVICES VIEW -->
-        <div id="services-view" class="view-section">
-            <section class="max-w-7xl mx-auto px-6 py-12">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest border border-blue-100 bg-blue-50 px-3 py-1 rounded-full">Beyond Lending</span>
-                    <h2 class="text-4xl font-semibold tracking-tight text-slate-900 mt-6 mb-4">Complete Financial Ecosystem</h2>
-                    <p class="text-lg text-slate-500">We don't just provide capital; we help you manage it. From tax compliance to wealth creation.</p>
-                </div>
-
-                <!-- Tax Service -->
-                <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm mb-12">
-                    <div class="md:w-1/2 relative min-h-[300px]">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Tax Services">
-                    </div>
-                    <div class="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                        <div class="h-10 w-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                            <span class="iconify" data-icon="lucide:file-text" data-width="20"></span>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">Tax Compliance &amp; Registration</h3>
-                        <p class="text-slate-500 mb-6">Expert assistance with ITR Filing, GST Returns, and handling tax notices. Ensure your business remains compliant.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-sm text-slate-700"><span class="iconify text-blue-600" data-icon="lucide:check"></span> ITR Filing (ITR-1 to ITR-7)</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-700"><span class="iconify text-blue-600" data-icon="lucide:check"></span> GST Registration &amp; Returns</li>
-                        </ul>
-                        <button onclick="router('contact')" class="self-start text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1">Consult Now <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span></button>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- CONTACT VIEW -->
-        <div id="contact-view" class="view-section">
-             <!-- Contact Hero -->
-             <div class="bg-slate-100 h-[300px] w-full relative">
-                 <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&amp;w=2072&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-50 grayscale" alt="Map">
-                 <div class="absolute inset-0 flex items-center justify-center">
-                     <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Contact Us</h1>
-                 </div>
-             </div>
-
-             <section class="max-w-7xl mx-auto px-6 -mt-20 mb-24 relative z-10">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
-                    <div class="grid grid-cols-1 md:grid-cols-5">
-                        <div class="md:col-span-2 p-10 bg-slate-900 text-white flex flex-col justify-between relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
-                            
-                            <div>
-                                <h3 class="text-xl font-semibold mb-6">Infinite Capital Management</h3>
-                                <div class="space-y-6">
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:map-pin" data-width="16"></span></div>
-                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Head Office</p><p class="text-sm text-white leading-relaxed">Lane No. 6, Rajput dairy matiala Road,<br>Nearest Metro Nawada, New Delhi, 110059</p></div>
-                                    </div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:phone" data-width="16"></span></div>
-                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Phone</p><p class="text-sm text-white">+91-81270 90456</p></div>
-                                    </div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 p-2 bg-white/5 rounded-lg border border-white/10"><span class="iconify text-blue-400" data-icon="lucide:mail" data-width="16"></span></div>
-                                        <div><p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Email</p><p class="text-sm text-white">info@infinitecapmanagement.com</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="md:col-span-3 p-10 md:p-12">
-                            <h3 class="text-xl font-semibold text-slate-900 mb-6">Send us a message</h3>
-                            <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                    <div><label class="block text-xs font-medium text-slate-700 mb-1.5">First Name</label><input type="text" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="John"></div>
-                                    <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Last Name</label><input type="text" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="Doe"></div>
-                                </div>
-                                <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Email Address</label><input type="email" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="john@example.com"></div>
-                                <div><label class="block text-xs font-medium text-slate-700 mb-1.5">Message</label><textarea rows="4" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-blue-500 outline-none" placeholder="How can we help you?"></textarea></div>
-                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors text-sm shadow-md">Submit Request</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-             </section>
-        </div>
-
     </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
-                        <span class="iconify text-blue-700" data-icon="lucide:infinity" data-width="24"></span>
-                        <span class="text-lg font-bold tracking-tight text-slate-900">Infinite</span>
-                    </div>
+                <div class="col-span-1 md:col-span-1 ">
+                    <img src="images/logo.png" alt="Infinite Capital Management" class="h-32 w-auto mb-6 drop-shadow-lg filter brightness-110 contrast-110 bg-black p-4 rounded-2xl">
                     <p class="text-sm text-slate-500 leading-relaxed mb-6">Your trusted partner for securing loans, managing compliance, and building a financial future.</p>
                 </div>
                 <div>
@@ -1721,7 +1504,7 @@
                     <h4 class="font-semibold text-slate-900 text-sm mb-4">Contact</h4>
                     <ul class="space-y-3 text-sm text-slate-500">
                         <li>+91-81270 90456</li>
-                        <li>info@infinitecapmanagement.com</li>
+                        <li>infinitecapitalmgmt@gmail.com</li>
                         <li>New Delhi, 110059</li>
                     </ul>
                 </div>
@@ -1813,8 +1596,68 @@
              prevStep();
         }
 
-        // Carousel Logic
+        // Blog Article Functions
+        function showBlogArticle(blogId) {
+            document.getElementById('blog-list').classList.add('hidden');
+            document.getElementById('blog-articles').classList.remove('hidden');
+            document.getElementById(blogId + '-full').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function hideBlogArticle() {
+            document.getElementById('blog-list').classList.remove('hidden');
+            document.getElementById('blog-articles').classList.add('hidden');
+            const articles = document.querySelectorAll('[id$="-full"]');
+            articles.forEach(article => article.classList.add('hidden'));
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Download Partnership Brochure
+        function downloadBrochure() {
+            window.open('https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/export?format=pdf', '_blank');
+        }
+
+        // EMI Calculator Function
+        function calculateEMI() {
+            const loanAmount = parseFloat(document.getElementById('emi-loan-amount').value) || 0;
+            const interestRate = parseFloat(document.getElementById('emi-interest-rate').value) || 0;
+            const tenureYears = parseFloat(document.getElementById('emi-tenure').value) || 0;
+
+            if (loanAmount <= 0 || interestRate <= 0 || tenureYears <= 0) {
+                document.getElementById('emi-monthly').textContent = '₹0';
+                document.getElementById('emi-total-interest').textContent = '₹0';
+                document.getElementById('emi-total-amount').textContent = '₹0';
+                return;
+            }
+
+            // Convert annual rate to monthly rate
+            const monthlyRate = interestRate / 12 / 100;
+            const tenureMonths = tenureYears * 12;
+
+            // EMI Formula: [P x R x (1+R)^N] / [(1+R)^N - 1]
+            const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / 
+                       (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+
+            const totalAmount = emi * tenureMonths;
+            const totalInterest = totalAmount - loanAmount;
+
+            // Format numbers in Indian format
+            document.getElementById('emi-monthly').textContent = formatCurrency(emi);
+            document.getElementById('emi-total-interest').textContent = formatCurrency(totalInterest);
+            document.getElementById('emi-total-amount').textContent = formatCurrency(totalAmount);
+        }
+
+        // Format currency in Indian format
+        function formatCurrency(amount) {
+            return '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+        }
+
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize EMI calculator
+            calculateEMI();
+            
+            // Carousel Logic
             const items = document.querySelectorAll('.carousel-item');
             let currentIndex = 0;
             const totalItems = items.length;
@@ -1828,5 +1671,7 @@
             }
         });
     </script>
+
+
 
 </body></html>
